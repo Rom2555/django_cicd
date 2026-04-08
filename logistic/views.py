@@ -3,7 +3,7 @@ from urllib import request
 from rest_framework import filters, pagination
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from rest_framework.viewsets import ModelViewSet
+from rest_framework.viewsets import ModelViewSet, ViewSet
 
 from logistic.models import Product, Stock
 from logistic.serializers import ProductSerializer, StockSerializer
@@ -36,6 +36,6 @@ class StockViewSet(ModelViewSet):
     search_fields = ['positions__product__title', 'positions__product__description']
     pagination_class = StockPagination
 
-class TestView(APIView):
-    def get(self, request):
+class TestView(ViewSet):
+    def list(self, request):
         return Response({"message": "Привет ВСЕМ!"})
