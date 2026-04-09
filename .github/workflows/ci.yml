@@ -11,11 +11,11 @@ jobs:
       SECRET_KEY: test-secret-key-ci-12345
       DEBUG: 1
       ALLOWED_HOSTS: localhost,127.0.0.1
-      DB_PASSWORD: test_pass
-      DB_NAME: test_db
-      DB_USER: test_user
-      DB_PORT: 5432
-      DB_HOST: localhost
+      POSTGRES_PASSWORD: test_pass
+      POSTGRES_DB: test_db
+      POSTGRES_USER: test_user
+      POSTGRES_PORT: 5432
+      POSTGRES_HOST: localhost
 
     services:
       postgresql_main:
