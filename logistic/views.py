@@ -37,4 +37,4 @@ class StockViewSet(ModelViewSet):
 
 class TestView(ViewSet):
     def list(self, request):
-        return Response({"message": "Привет ВСЕМ!"})
+        return Response({"message": "Автоматизация работает!"})
