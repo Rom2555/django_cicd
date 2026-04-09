@@ -61,7 +61,7 @@ jobs:
           POSTGRES_HOST: ${{ env.POSTGRES_HOST }}
 
       - name: Деплой приложения
-        uses: appleboy/scp-action@master
+        uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.SSH_HOST }}
           port: ${{ secrets.SSH_PORT }}
