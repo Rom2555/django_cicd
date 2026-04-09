@@ -8,14 +8,14 @@ jobs:
   testing:
     runs-on: ubuntu-latest
     env:
-      SECRET_KEY: test-secret-key-ci-12345
-      DEBUG: 1
-      ALLOWED_HOSTS: localhost,127.0.0.1
-      POSTGRES_PASSWORD: test_pass
-      POSTGRES_DB: test_db
-      POSTGRES_USER: test_user
-      POSTGRES_PORT: 5432
-      POSTGRES_HOST: localhost
+      SECRET_KEY: ${{ secrets.SECRET_KEY }}
+      DEBUG: ${{ secrets.DEBUG }}
+      ALLOWED_HOSTS: ${{ secrets.ALLOWED_HOSTS }}
+      DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+      DB_NAME: ${{ secrets.DB_NAME }}
+      DB_USER: ${{ secrets.DB_USER }}
+      DB_PORT: ${{ secrets.DB_PORT }}
+      DB_HOST: ${{ secrets.DB_HOST }}
 
     services:
       postgresql_main:
