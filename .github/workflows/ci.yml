@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       SECRET_KEY: test-secret-key-ci-12345
-      DEBUG: false
+      DEBUG: 1
       ALLOWED_HOSTS: localhost,127.0.0.1
       DB_PASSWORD: test_pass
       DB_NAME: test_db
