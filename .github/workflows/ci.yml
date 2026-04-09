@@ -60,17 +60,15 @@ jobs:
           POSTGRES_PORT: ${{ env.POSTGRES_PORT }}
           POSTGRES_HOST: ${{ env.POSTGRES_HOST }}
 
-#      - name: Деплой приложения
-#        uses: appleboy/scp-action@master
-#        with:
-#          host: ${{ secrets.SSH_HOST }}
-#          port: ${{ secrets.SSH_PORT }}
-#          username: ${{ secrets.SSH_USER }}
-#          password: ${{ secrets.SSH_PASSWORD }}
-#          script: |
-#            cd /home/roma/dgango_cicd
-#            git pull origin main
-            
+      - name: Деплой приложения
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          port: ${{ secrets.SSH_PORT }}
+          username: ${{ secrets.SSH_USER }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          script: expect /home/roma/django_cicd/deploy.exp
+
 
 
 
