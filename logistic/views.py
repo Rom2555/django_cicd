@@ -37,5 +37,5 @@ class StockViewSet(ModelViewSet):
 
 class TestView(ViewSet):
     def list(self, request):
-        return Response({"message": "CI CD pipeline успешно запущен!\n"
+        return Response({"message": "CI_CD pipeline успешно запущен!\n"
                                     "Автоматизация работает!"})
