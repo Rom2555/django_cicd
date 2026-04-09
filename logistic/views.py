@@ -1,8 +1,5 @@
-from urllib import request
-
 from rest_framework import filters, pagination
 from rest_framework.response import Response
-from rest_framework.views import APIView
 from rest_framework.viewsets import ModelViewSet, ViewSet
 
 from logistic.models import Product, Stock
@@ -33,8 +30,10 @@ class StockViewSet(ModelViewSet):
     queryset = Stock.objects.all()
     serializer_class = StockSerializer
     filter_backends = [filters.SearchFilter]
-    search_fields = ['positions__product__title', 'positions__product__description']
+    search_fields = ['positions__product__title',
+                     'positions__product__description']
     pagination_class = StockPagination
+
 
 class TestView(ViewSet):
     def list(self, request):
